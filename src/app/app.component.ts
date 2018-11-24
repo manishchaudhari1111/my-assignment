@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'my-assignment';
+  isDispalyText = true;
+  logArray = [];
+  toggleDisplay = function() {
+    this.isDispalyText = !this.isDispalyText;
+    this.logArray.push(this.logArray.length + 1);
+  }
 }

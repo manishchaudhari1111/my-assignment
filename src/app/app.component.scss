@@ -1,0 +1,26 @@
+.my-app-container{
+    width: 1280px;
+    margin: 50px auto;
+    .text-container{
+        min-height: 70px;
+    }
+    .btn-container{
+        margin-bottom: 20px;
+    }
+    .text-container, .btn-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .log-list{
+        display: flex;
+        flex-wrap: wrap;
+        mat-card{
+            min-width: 18px;
+            &.white-color{
+                color: white;
+            }
+        }
+    }
+    
+}
