@@ -1,18 +1,26 @@
-<div class="my-app-container">
-  <div class="text-container">
-    <p *ngIf="isDispalyText">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias doloremque minima vel corrupti nostrum, vitae excepturi nemo odit obcaecati? Eum magni repellendus dolore nisi similique maiores eligendi debitis corrupti enim!
-    </p>
+<div class="container">
+  <div class="row r-items">
+    <ul class="c-items">
+      <li class="c-item" [ngClass]="{'show-img': imagesArray[0].showImg}">
+        <img src="../assets/images/header01.jpg">
+      </li>
+      <li class="c-item" [ngClass]="{'show-img': imagesArray[1].showImg}">
+        <img src="../assets/images/header02.jpg">
+      </li>
+      <li class="c-item" [ngClass]="{'show-img': imagesArray[2].showImg}">
+        <img src="../assets/images/header03.jpg">
+      </li>
+    </ul>
   </div>
-  <div class="btn-container">
-    <button mat-raised-button color="primary" (click)="toggleDisplay()">Display Details</button>
-  </div>
-  <div class="log-list">
-    <div class="log-item" *ngFor="let log of logArray; let i = index;">
-      <mat-card [ngStyle]="{backgroundColor: i >= 4 ? 'blue' : 'white'}" [ngClass]="{'white-color' : i >= 4}">
-        {{log}}
-      </mat-card>
+  <div class="row r-numbers">
+    <div class="c-numbers">
+      <div class="c-number" (click)="changeSlide(0)" [ngClass]="{'selected-img': imagesArray[0].showImg}"><img src="../assets/images/header01.jpg"><span>1</span></div>
+      <div class="c-number" (click)="changeSlide(1)" [ngClass]="{'selected-img': imagesArray[1].showImg}"><img src="../assets/images/header02.jpg"><span>2</span></div>
+      <div class="c-number" (click)="changeSlide(2)" [ngClass]="{'selected-img': imagesArray[2].showImg}"><img src="../assets/images/header03.jpg"><span>3</span></div>
     </div>
-    
   </div>
+  <!-- <div class="clip-container">
+    <div class="clip1"></div>
+    <div class="clip2"></div>
+  </div> -->
 </div>

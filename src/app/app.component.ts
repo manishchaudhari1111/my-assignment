@@ -6,10 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  isDispalyText = true;
-  logArray = [];
-  toggleDisplay = function() {
-    this.isDispalyText = !this.isDispalyText;
-    this.logArray.push(this.logArray.length + 1);
+  imagesArray = [{showImg:true}, {showImg:false}, {showImg:false}]
+  constructor() {
+  }
+  changeSlide = function(index){
+    for (let i = 0; i < this.imagesArray.length; i++) {
+      if(i === index){
+        this.imagesArray[i].showImg = true;
+      }else{
+        this.imagesArray[i].showImg = false;
+      }
+    }
   }
 }

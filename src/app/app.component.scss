@@ -1,26 +1,123 @@
-.my-app-container{
-    width: 1280px;
+.container{
+    width: 900px;
     margin: 50px auto;
-    .text-container{
-        min-height: 70px;
+    padding: 0px 20px;
+    .r-items{
+        margin-bottom: 10px;
     }
-    .btn-container{
-        margin-bottom: 20px;
-    }
-    .text-container, .btn-container{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .log-list{
-        display: flex;
-        flex-wrap: wrap;
-        mat-card{
-            min-width: 18px;
-            &.white-color{
-                color: white;
+    .row{
+        border: 2px solid #b1b1b1;
+        border-radius: 5px;
+        width: 100%;
+        margin: 20px auto;
+        .c-item{
+            display: none;
+            transform-origin: 50% 50%;
+            animation-name: change-slide;
+            animation-duration: 300ms;
+            animation-fill-mode: forwards;
+            animation-iteration-count: 1;
+            animation-timing-function: cubic-bezier(0, 0.24, 0.24, 0.98);
+            &.show-img{
+                display: block;
             }
         }
+        
+        .c-items{
+            perspective: 1000px;
+            height: 400px;
+            padding: 0px 15px;
+        }
+        li{
+            list-style: none;
+        }
+        img{
+            width: 100%;
+            height: 400px;
+        }
+    }
+    .c-numbers{
+        display: flex;
+        justify-content: center;
+        background-color: #b1b1b1;
+        .c-number{
+            border: 2px solid #fff;
+            border-radius: 50%;
+            height: 50px;
+            width: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            margin: 5px;
+            cursor: pointer;
+            span{
+                position: absolute;
+                color: #fff;
+                font-size: 1.5rem;
+                font-weight: bold;
+            }
+            img{
+                border-radius: 100%;
+                height: 100%;
+                opacity: 0.5;
+                transition: opacity 0.3s, transform 0.3s;
+            }
+            &.selected-img{
+                cursor: default;
+                img{
+                    opacity: 1;
+                    transform: scale3d(0.75, 0.75, 1);
+                }
+            }
+            &:hover{
+               img{
+                    opacity: 0.95;
+                    transform: scale3d(0.75, 0.75, 1);
+               } 
+            }
+            
+        }
+    }
+    .clip-container{
+        margin-bottom: 20px;
+        height: 200px;
+    }
+    .clip2{
+        background-color: #f78195;
+        height: 100%;
+        width: 50%;
+        clip-path: polygon(100% 99%, 0% 100%, 100% 1%);
+        float: right;
+    }
+    .clip1{
+        background-color: #f78195;
+        width: 50%;
+        height: 100%;
+        clip-path: polygon(100% 100%, 0% 100%, 0 0);
+        float: left;
     }
     
+}
+@keyframes change-slide{
+    0%{
+        opacity: 0;
+        transform: scale(0);
+    }
+    25%{
+        opacity: 0.25;
+        transform: scale(0.25); 
+    }
+    75%{
+        opacity: 0.75;
+        transform: scale(0.75);
+    }
+    50%{
+        opacity: 0.5;
+        transform: scale(0.5);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
 }
